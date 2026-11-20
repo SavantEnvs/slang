@@ -1,0 +1,11 @@
+project: savantenvs/slang
+target: tidy-config
+
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/tidy-config/testsuite
+
+cmds:
+  # mayhem-lint: ok-image-path (the fixed design.sv is only read, never written)
+  - cmd: /mayhem/build/mayhem-fuzz/bin/slang-tidy -q -j 1 --config-file @@ /mayhem/mayhem/tidy-config/design.sv
+    timeout: 10

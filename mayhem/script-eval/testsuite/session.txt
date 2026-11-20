@@ -1,0 +1,15 @@
+int x = 5;
+x + 3
+logic [7:0] v = 8'hA5;
+v[3:0] ^ 4'b1x0z
+$clog2(1024)
+string s = "hello";
+s.toupper()
+s.getc(1)
+$rtoi(-2.7)
+int q[$] = {1,2,3};
+q[$+1]
+{<<4{v}}
+function automatic int fib(int n); return n < 2 ? n : fib(n-1) + fib(n-2); endfunction
+fib(10)
+$sformatf("%0d-%h", 42, 255)

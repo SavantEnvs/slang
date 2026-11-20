@@ -1,0 +1,11 @@
+project: savantenvs/slang
+target: waivers
+
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/waivers/testsuite
+
+cmds:
+  # mayhem-lint: ok-image-path (the fixed design.sv is only read, never written)
+  - cmd: /mayhem/build/mayhem-fuzz/bin/slang -q -j 1 -Weverything --waiver-file @@ /mayhem/mayhem/waivers/design.sv
+    timeout: 10

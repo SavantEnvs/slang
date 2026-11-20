@@ -1,0 +1,11 @@
+project: savantenvs/slang
+target: libmap
+
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/libmap/testsuite
+
+cmds:
+  - cmd: /mayhem/build/mayhem-fuzz/fuzzers/fuzz_libmap
+    libfuzzer: true
+    timeout: 10

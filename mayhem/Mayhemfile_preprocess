@@ -1,0 +1,11 @@
+project: savantenvs/slang
+target: preprocess
+
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/preprocess/testsuite
+
+cmds:
+  - cmd: /mayhem/build/mayhem-fuzz/fuzzers/fuzz_preprocess
+    libfuzzer: true
+    timeout: 10

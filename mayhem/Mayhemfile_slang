@@ -1,0 +1,10 @@
+project: savantenvs/slang
+target: slang
+
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/slang/testsuite
+
+cmds:
+  - cmd: /mayhem/build/mayhem-fuzz/bin/slang -q -j 1 --ast-json - @@
+    timeout: 10

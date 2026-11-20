@@ -1,0 +1,8 @@
+Checks:
+    -*,
+    style-*,
+    -style-enum-name
+CheckConfigs:
+    clkName: clk,
+    resetIsActiveHigh: false,
+    inputPortSuffix: [_i, _in]

@@ -1,0 +1,11 @@
+project: savantenvs/slang
+target: slang-driver
+
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/slang-driver/testsuite
+
+cmds:
+  - cmd: /mayhem/build/mayhem-fuzz/fuzzers/fuzz_slang_driver
+    libfuzzer: true
+    timeout: 10

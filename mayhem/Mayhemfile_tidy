@@ -1,0 +1,11 @@
+project: savantenvs/slang
+target: tidy
+
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/tidy/testsuite
+
+cmds:
+  - cmd: /mayhem/build/mayhem-fuzz/fuzzers/fuzz_tidy
+    libfuzzer: true
+    timeout: 10

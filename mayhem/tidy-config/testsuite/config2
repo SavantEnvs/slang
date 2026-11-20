@@ -1,0 +1,6 @@
+Checks:
+    synthesis-only-assigned-on-reset=warning,
+    style-*=error,
+    -style-no-old-always-syntax
+CheckConfigs:
+    typedefRegexString: "^[a-z_]+_t$"
