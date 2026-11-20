@@ -1,0 +1,11 @@
+project: savantenvs/slang
+target: compile-analyze
+
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/compile-analyze/testsuite
+
+cmds:
+  - cmd: /mayhem/build/mayhem-fuzz/fuzzers/fuzz_compile_analyze
+    libfuzzer: true
+    timeout: 10

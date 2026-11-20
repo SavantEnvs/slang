@@ -1,0 +1,11 @@
+project: savantenvs/slang
+target: reflect
+
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/reflect/testsuite
+
+cmds:
+  - cmd: /mayhem/build/mayhem-fuzz/fuzzers/fuzz_reflect
+    libfuzzer: true
+    timeout: 10

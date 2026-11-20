@@ -1,0 +1,9 @@
+library rtlLib "rtl/*.v", "rtl/**/*.sv" -incdir "inc", "../common/inc";
+library gateLib ./gates/*.vg;
+include ../other/lib.map;
+config cfg1;
+  design rtlLib.top;
+  default liblist rtlLib gateLib;
+  instance top.u1 use gateLib.cell;
+  cell foo liblist rtlLib;
+endconfig

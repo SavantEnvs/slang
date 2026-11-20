@@ -1,0 +1,3 @@
+[[waivers]]
+hier = "top.**"
+diagnostic = ["unused-variable", "implicit-conv"]

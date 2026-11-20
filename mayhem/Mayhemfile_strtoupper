@@ -1,0 +1,11 @@
+project: savantenvs/slang
+target: strtoupper
+
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/strtoupper/testsuite
+
+cmds:
+  - cmd: /mayhem/build/mayhem-fuzz/fuzzers/fuzz_strToUpper
+    libfuzzer: true
+    timeout: 10

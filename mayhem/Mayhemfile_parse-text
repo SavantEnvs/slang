@@ -1,0 +1,11 @@
+project: savantenvs/slang
+target: parse-text
+
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/parse-text/testsuite
+
+cmds:
+  - cmd: /mayhem/build/mayhem-fuzz/fuzzers/fuzz_parse_text
+    libfuzzer: true
+    timeout: 10

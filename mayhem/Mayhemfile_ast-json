@@ -1,0 +1,11 @@
+project: savantenvs/slang
+target: ast-json
+
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/ast-json/testsuite
+
+cmds:
+  - cmd: /mayhem/build/mayhem-fuzz/fuzzers/fuzz_ast_json
+    libfuzzer: true
+    timeout: 10

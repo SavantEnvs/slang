@@ -1,0 +1,11 @@
+project: savantenvs/slang
+target: svint
+
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/svint/testsuite
+
+cmds:
+  - cmd: /mayhem/build/mayhem-fuzz/fuzzers/fuzz_svint
+    libfuzzer: true
+    timeout: 10

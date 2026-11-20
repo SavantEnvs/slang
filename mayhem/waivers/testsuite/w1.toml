@@ -1,0 +1,7 @@
+[[waivers]]
+file = "**/waivers/*.sv"
+diagnostic = "width-trunc"
+
+[[waivers]]
+hier = "top.g[*].u"
+regex = "^\\s*logic"
